@@ -51,6 +51,16 @@ function calculateParallelogramArea() {
 }
 
 
+// Rhombus
+function calculateRhombusArea() {
+    const diagonal1 = getInputValue('rhombus-diagonal1');
+    const diagonal2 = getInputValue('rhombus-diagonal2');
+    area = 0.5 * diagonal1 * diagonal2;
+    setElementInnerText('rhombus-area', area);
+
+}
+
+
 // reusable get input value 
 function getInputValue(fieldId) {
     const inputField = document.getElementById(fieldId);
