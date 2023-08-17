@@ -14,18 +14,28 @@
 
     <main>
         <!-- container -->
-        <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col lg:flex-row mt-5">
             <!-- shape container -->
-            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
 
-                <!-- first card -->
+                <!-- triangle card -->
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure><img src="./images/triangle.png" alt="Shoes" /></figure>
                     <div class="card-body">
                       <h2 class="card-title">Triangle</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <p>Area (A) = 0.5 X b X h </p>
+                      <p>
+
+                        <input id="triangle-base" class="border bg-gray-200 rounded-lg w-24 text-xl px-2" type="text" placeholder="base">
+                        <span class="ml-2 mr-2">cm</span>
+
+                        <input id="triangle-height" class="border bg-gray-200 rounded-lg w-24 text-xl px-2" type="text" placeholder="height">
+                        <span class="ml-2">cm</span>
+
+                      </p>
+                      <p class="text-2xl">Area: <span id="triangle-area" class="font-semibold">0</span>cm<sup>2</sup></p>
                       <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary w-full mt-2">Calculate</button>
                       </div>
                     </div>
                   </div>
@@ -34,10 +44,20 @@
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <figure><img src="./images/rectangle.png" alt="Shoes" /></figure>
                     <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <h2 class="card-title">Triangle</h2>
+                      <p>Area (A) = 0.5 X b X h </p>
+                      <p>
+
+                        <input id="triangle-base" class="border bg-gray-200 rounded-lg w-24 text-xl px-2" type="text" placeholder="base">
+                        <span class="ml-2 mr-2">cm</span>
+
+                        <input id="triangle-height" class="border bg-gray-200 rounded-lg w-24 text-xl px-2" type="text" placeholder="height">
+                        <span class="ml-2">cm</span>
+
+                      </p>
+                      <p class="text-2xl">Area: <span id="triangle-area" class="font-semibold">0</span>cm<sup>2</sup></p>
                       <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary w-full mt-2">Calculate</button>
                       </div>
                     </div>
                   </div>
@@ -63,5 +83,8 @@
         </div>
     </main>
 
+
+    <!-- js -->
+    <script src="script/area-calcutator.js"></script>
   </body>
 </html>
