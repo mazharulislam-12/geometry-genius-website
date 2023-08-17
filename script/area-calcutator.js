@@ -30,11 +30,37 @@ function calculateRectangleArea() {
     const length = parseFloat(lengthValueText);
     console.log(length);
 
-    const rectangle = width * length;
-    console.log(rectangle);
+    const area = width * length;
+    console.log(area);
 
     const rectangleSpan = document.getElementById('rectangle-area');
-    rectangleSpan.innerText = rectangle;
-    
+    rectangleSpan.innerText = area;
 
 }
+
+
+// Parallelogram-----
+function calculateParallelogramArea() {
+    const base = getInputValue('parallelogram-base');
+    console.log(base);
+    const height = getInputValue('parallelogram-height');
+    // console.log(height);
+    area = base * height;
+    // console.log(area);
+    setElementInnerText('parallelogram-area', area);
+}
+
+
+// reusable get input value 
+function getInputValue(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const value = parseFloat(inputValueText);
+    return value;
+}
+
+function setElementInnerText(elementId, area) {
+    const element = document.getElementById(elementId);
+    element.innerText = area;
+}
+
