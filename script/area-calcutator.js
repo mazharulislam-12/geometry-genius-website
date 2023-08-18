@@ -18,6 +18,7 @@ function calculateTriangleArea() {
     
     const areaSpan = document.getElementById('triangle-area');
     areaSpan.innerText = area;
+    addToCalculationEntry('Triangle', area);
 }
 
 function calculateRectangleArea() {
@@ -38,6 +39,7 @@ function calculateRectangleArea() {
    }
     const rectangleSpan = document.getElementById('rectangle-area');
     rectangleSpan.innerText = area;
+    addToCalculationEntry('Rectangle', area);
 
 }
 
@@ -54,6 +56,9 @@ function calculateParallelogramArea() {
     }
     
     setElementInnerText('parallelogram-area', area);
+
+     // add to calculation entry
+     addToCalculationEntry('Parallelogram', area);
 }
 
 
@@ -68,6 +73,7 @@ function calculateRhombusArea() {
         return;
     }
     setElementInnerText('rhombus-area', area);
+    addToCalculationEntry('Rhombus', area);
 
 }
 
@@ -80,18 +86,25 @@ function calculatePentagonArea() {
         alert('please insert number');
         return;
     }
-    setElementInnerText('pentagon-area', area);                                                                                        
+    setElementInnerText('pentagon-area', area); 
+    addToCalculationEntry('Pentagon', area);
+
+
 }
 // Ellipse
 function calculateEllipseArea() {
     const ellipseA = getInputValue('ellipse-a');
     const ellipseB = getInputValue('ellipse-b');
     area = Math.PI * ellipseA * ellipseB;
+    const areaToDecimal = area.toFixed(2);
     if (isNaN(ellipseA) || isNaN(ellipseB)) {
         alert('please insert number');
         return;
     }
-    setElementInnerText('ellipse-area', area)
+    setElementInnerText('ellipse-area', areaToDecimal)
+
+    addToCalculationEntry('Ellipse', areaToDecimal);
+
 }
 
 
@@ -110,4 +123,31 @@ function setElementInnerText(elementId, area) {
 }
 
 
-// add to 
+// add to calculate entry
+/*
+1. get the element where you went to add the dynamic HTML
+2.create an element you went to add
+3.if needed some class
+4.set inner html , it could be dynamic template string
+5.append the create element as a child of the parent
+
+*/
+function addToCalculationEntry(areaType, area) {
+    console.log(areaType + ' ' + area);
+    const calculationEntry = document.getElementById('calculation-entry');
+
+    const count = calculationEntry.childElementCount;
+
+    const p = document.createElement('p');
+    // p.innerHTML =areaType + ' ' + area;
+    p.classList.add('my-4');
+    p.innerHTML = `
+        ${count + 1} ${areaType} ${area} cm <sup>2</sup>
+        <button class = "btn btn-sm btn-success">Convert</button>
+    `;
+    calculationEntry.appendChild(p);
+
+
+
+
+}
